@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 
 const Slider = () => {
   const images = [
-    "https://via.placeholder.com/800x400",
-
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0kxWZeBs3jXREBj3ouracGRZgifDapoN9qNMJzL73odEM5PawjJ5tWZYwqRNJH6ESAS4&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0kxWZeBs3jXREBj3ouracGRZgifDapoN9qNMJzL73odEM5PawjJ5tWZYwqRNJH6ESAS4&usqp=CAU"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +21,9 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-3/4 mx-auto h-64 overflow-hidden">
+    <div className="relative mx-auto h-80 w-full overflow-hidden">
+      {/* The width is set to 80% of the parent container */}
+      
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -32,7 +33,8 @@ const Slider = () => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="w-full object-cover"
+            className="w-full object-cover h-80"
+            // Ensures the image fills the container and has the desired height
           />
         ))}
       </div>

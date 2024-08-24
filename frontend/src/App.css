@@ -2,12 +2,16 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: black;
+    color:black;
   }
   
   /* Ensure the body and html take full height */
   html, body {
     height: 100%;
     width: 100%;
+    background-color: black;
+    color: black;
   }
   
   /* Center the entire page content */
