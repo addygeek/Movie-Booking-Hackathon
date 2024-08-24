@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './components/Navbar'
 import Home from '../src/pages/Home'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Home />
-
+    <div className="flex flex-col justify-center items-center min-h-screen bg-red-400">
+    <div className="w-full max-w-4xl">
+      <Home/>
+    </div>
+    </div>
     </>
   )
 }
