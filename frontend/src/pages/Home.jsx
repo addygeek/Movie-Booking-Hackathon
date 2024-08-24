@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
 import MovieCard from '../components/MovieCard';
+import '../Style/Home.css';
 
 const Home = () => {
   const movies = [

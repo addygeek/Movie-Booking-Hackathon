@@ -1,18 +1,22 @@
-import { useState } from 'react'
-import './App.css'
-import Home from '../src/pages/Home'
-function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Aboutus from './pages/Aboutus'; 
+//import Contact from './pages/Contact';
 
+function App() {
   return (
-    <>
-    <div className="flex flex-col justify-center items-center min-h-screen bg-red-400">
-    <div className="w-full max-w-4xl">
-      <Home/>
-    </div>
-    </div>
-    </>
-  )
+    <Router>
+      <div className="flex flex-col justify-center items-center min-h-screen bg-red-400">
+        <div className="w-full max-w-4xl">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<Aboutus />} />
+            {/* <Route path="/contact" element={<Contact />} /> */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
