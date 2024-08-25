@@ -1,7 +1,9 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/Homeold';
 import Aboutus from './pages/Aboutus'; 
-//import Contact from './pages/Contact';
+import Slider from './components/Slider'; // Assuming Slider component is in components folder
+import MovieDetails from './components/MovieDetails'; // Assuming MovieDetails component is in components folder
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<Aboutus />} />
+            <Route path="/slider" element={<Slider />} />
+            <Route path="/movie/:id" element={<MovieDetails />} />
             {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
         </div>

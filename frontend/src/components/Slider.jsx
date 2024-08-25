@@ -1,53 +1,52 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import '../Style/Slider.css';
 
 const Slider = () => {
-  const images = [
-    "https://via.placeholder.com/800x400",
-
+  const slides = [
+    { id: 1, title: "Movie 1", imageUrl: "https://via.placeholder.com/1920x600", details: "/movies/1" },
+    { id: 2, title: "Movie 2", imageUrl: "https://via.placeholder.com/1920x600", details: "/movies/2" },
+    // Add more slides as needed
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNextSlide();
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
+  const goToNextSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === slides.length - 1 ? 0 : prevSlide + 1
     );
   };
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+  const goToPreviousSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? slides.length - 1 : prevSlide - 1
     );
   };
 
   return (
-    <div className="relative w-3/4 mx-auto h-64 overflow-hidden">
+    <div className="slider-container">
       <div
-        className="flex transition-transform duration-500"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        className="slider-track"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Slide ${index + 1}`}
-            className="w-full object-cover"
-          />
+        {slides.map((slide) => (
+          <Link to={slide.details} key={slide.id} className="slider-slide">
+            <img src={slide.imageUrl} alt={slide.title} />
+          </Link>
         ))}
       </div>
-      {/* Left Arrow */}
-      <button
-        onClick={goToPrevious}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2"
-      >
+      <button onClick={goToPreviousSlide} className="slider-arrow left-arrow">
         &#8592;
       </button>
-      {/* Right Arrow */}
-      <button
-        onClick={goToNext}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2"
-      >
+      <button onClick={goToNextSlide} className="slider-arrow right-arrow">
         &#8594;
       </button>
     </div>

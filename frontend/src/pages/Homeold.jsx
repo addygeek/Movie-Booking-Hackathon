@@ -3,7 +3,8 @@ import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
 import MovieCard from '../components/MovieCard';
 import '../Style/Home.css';
-
+import NavigationButtons from '../components/NavigationButtons';
+import MovieSeat from '../components/MovieSeat';
 const Home = () => {
   const movies = [
     { title: "Movie 1", imageUrl: "https://via.placeholder.com/400x300" },
@@ -15,6 +16,8 @@ const Home = () => {
       <Navbar />
       <div className="content-container">
         <Slider />
+        <NavigationButtons/>
+        <MovieSeat />
         <h2 className="text-2xl font-bold mb-4 text-center">Recent Movies</h2>
         <div className="movie-card-container">
           {movies.map((movie, index) => (
