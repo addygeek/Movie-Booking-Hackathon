@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px;
-    background-color: #1a1a1a; /* Dark gray background */
+    background-color: black; /* Dark gray background */
     color: #ffffff; /* White text */
     font-family: 'Roboto', sans-serif;
     position: relative;
@@ -17,6 +17,7 @@
   /* Logo */
   .navbar .logo img {
     height: 50px;
+    margin-left: 12%;
     width: 50px;
     border-radius: 50%; /* Circular logo */
     transition: transform 0.3s ease-in-out;

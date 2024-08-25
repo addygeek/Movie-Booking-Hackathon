@@ -1,0 +1,27 @@
+.navigation-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0; /* Margin to create space above and below the buttons */
+  }
+  
+  .nav-button {
+    background-color: #1d1c1c; /* Black theme */
+    color:black;
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Padding around the buttons */
+    margin: 0 10px; /* Space between the buttons */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #333; /* Slightly lighter black on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+  }
+  
+  .nav-button:active {
+    background-color: #555; /* Even lighter black on click */
+    transform: scale(0.95); /* Slightly smaller on click */
+  }
+  
