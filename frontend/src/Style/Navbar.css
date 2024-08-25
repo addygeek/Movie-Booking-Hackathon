@@ -1,0 +1,114 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1a1a1a; /* Dark gray background */
+    color: #ffffff; /* White text */
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Logo */
+  .navbar .logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%; /* Circular logo */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar .logo img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  /* Middle: Recent Movies Slider */
+  .navbar .slider-container {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background-color: #333333;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar .slider-container button {
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .navbar .slider-container .dot {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6347; /* Tomato color for the dot */
+    border-radius: 50%;
+    animation: slide 10s infinite ease-in-out;
+  }
+  
+  @keyframes slide {
+    0% { left: 0; }
+    50% { left: calc(100% - 20px); }
+    100% { left: 0; }
+  }
+  
+  /* Right: Icons */
+  .navbar .icons-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;    margin-right: 2%;
+  }
+  
+  .navbar .icons-container button {
+    background-color: #333333; /* Darker background for icons */
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+
+  }
+  
+  .navbar .icons-container button:hover {
+    background-color: #555555; /* Slightly lighter background on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  .navbar .icons-container .icon {
+    color: #ffffff;
+    font-size: 18px;
+    
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar .slider-container {
+      width: 150px; /* Adjust slider width for smaller screens */
+    }
+  
+    .navbar .icons-container {
+      gap: 10px; /* Reduce gap between icons */
+    }
+  
+    .navbar .icons-container .icon {
+      font-size: 16px; /* Reduce icon size */
+    }
+  }
+  
