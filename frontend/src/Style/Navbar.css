@@ -1,115 +1,129 @@
 /* Navbar Container */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    background-color: black; /* Dark gray background */
-    color: #ffffff; /* White text */
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Logo */
-  .navbar .logo img {
-    height: 50px;
-    margin-left: 12%;
-    width: 50px;
-    border-radius: 50%; /* Circular logo */
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .navbar .logo img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-  }
-  
-  /* Middle: Recent Movies Slider */
-  .navbar .slider-container {
-    position: relative;
-    width: 200px;
-    height: 40px;
-    background-color: #333333;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .navbar .slider-container button {
-    position: relative;
-    z-index: 1;
-    background-color: transparent;
-    color: #ffffff;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .navbar .slider-container .dot {
-    position: absolute;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #ff6347; /* Tomato color for the dot */
-    border-radius: 50%;
-    animation: slide 10s infinite ease-in-out;
-  }
-  
-  @keyframes slide {
-    0% { left: 0; }
-    50% { left: calc(100% - 20px); }
-    100% { left: 0; }
-  }
-  
-  /* Right: Icons */
-  .navbar .icons-container {
-    display: flex;
-    align-items: center;
-    gap: 16px;    margin-right: 2%;
-  }
-  
-  .navbar .icons-container button {
-    background-color: #333333; /* Darker background for icons */
-    padding: 10px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    cursor: pointer;
-    border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 60px;
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  z-index: 1000;
+}
 
+/* Navbar Logo */
+.navbar-logo img {
+  height: 40px;
+  padding-left: 10px;
+}
+
+/* Navbar Links Container */
+.navbar-links-container {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center; /* Center the container */
+  align-items: center; /* Center items vertically */
+}
+
+.navbar-links-motion {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px; /* Add spacing between icons */
+  padding: 10px 0;
+  border-radius: 8px;
+   /* Light transparent background */
+  backdrop-filter: blur(100px); /* Blur effect for modern look */
+}
+
+/* Navbar Links */
+.navbar-link {
+  color: white;
+  font-size: 16px;
+  transition: transform 0.3s ease; /* Smooth animation for hover */
+  display: flex;
+  align-items: center;
+  
+}
+
+.navbar-icon-text {
+  display: flex;
+  flex-direction: column; /* Stack icon above text */
+  align-items: center; /* Center icon and text horizontally */
+}
+
+.navbar-label {
+  margin-top: 5px; /* Space between icon and label */
+  font-size: 12px;
+}
+
+/* Icon hover effect */
+.navbar-link:hover {
+  transform: scale(1.1); /* Scale icon on hover */
+}
+
+/* Profile Section */
+.navbar-profile {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Hamburger Icon */
+.navbar-hamburger {
+  display: none; /* Hide by default */
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 10px;
   }
-  
-  .navbar .icons-container button:hover {
-    background-color: #555555; /* Slightly lighter background on hover */
-    transform: scale(1.1); /* Slight zoom effect on hover */
+
+  .navbar-links-container {
+    display: none; /* Hide navbar links on smaller screens */
   }
-  
-  .navbar .icons-container .icon {
-    color: #ffffff;
-    font-size: 18px;
-    
+
+  .navbar-links-container.open {
+    display: block; /* Show when menu is open */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    text-align: center;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar .slider-container {
-      width: 150px; /* Adjust slider width for smaller screens */
-    }
-  
-    .navbar .icons-container {
-      gap: 10px; /* Reduce gap between icons */
-    }
-  
-    .navbar .icons-container .icon {
-      font-size: 16px; /* Reduce icon size */
-    }
+
+  .navbar-links-motion {
+    display: block; /* Make vertical on small screens */
+    flex-direction: column;
+    gap: 10px; /* Adjust gap for smaller screens */
   }
-  
+
+  .navbar-link {
+    display: block; /* Make links block-level on small screens */
+    font-size: 18px; /* Increase font size for readability */
+    margin-bottom: 10px;
+  }
+
+  .navbar-profile img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar-hamburger {
+    display: block; /* Show hamburger icon on small screens */
+  }
+}

@@ -5,6 +5,8 @@ import MovieCard from '../components/MovieCard';
 import '../Style/Home.css';
 import NavigationButtons from '../components/NavigationButtons';
 import MovieSeat from '../components/MovieSeat';
+// import '../App.css'
+
 const Home = () => {
   const movies = [
     { title: "Movie 1", imageUrl: "https://via.placeholder.com/400x300" },
@@ -12,20 +14,39 @@ const Home = () => {
   ];
 
   return (
-    <div className="home-container">
+    <div >
+    <div className="home">
+      {/* Navbar */}
       <Navbar />
-      <div className="content-container">
-        <Slider />
-        <NavigationButtons/>
-        <MovieSeat />
-        <h2 className="text-2xl font-bold mb-4 text-center">Recent Movies</h2>
-        <div className="movie-card-container">
-          {movies.map((movie, index) => (
-            <MovieCard key={index} title={movie.title} imageUrl={movie.imageUrl} />
-          ))}
-        </div>
-      </div>
     </div>
+      {/* Slider */}
+      <div className="slider">
+        <Slider />
+       </div>
+
+      {/* Navigation Buttons */}
+      {/* <div className="button-container">
+        {/* <NavigationButtons /> */}
+        {/* <h1>Choose Seats</h1> */}
+      {/* </div> */} 
+
+      {/* Movie Seat */}
+      {/* <div className="movie-seat-container">
+        <MovieSeat />
+      </div> */}
+
+      {/* Movie Cards */}
+      <h2 className="recent-movies-title">Recent Movies</h2>
+      <div className="movie-card-container">
+        {/* {movies.map((movie, index) => (
+          <MovieCard key={index} title={movie.title} imageUrl={movie.imageUrl} />
+        ))} */}
+        <MovieCard/>
+      </div>
+    
+      
+    </div>
+    
   );
 };
 

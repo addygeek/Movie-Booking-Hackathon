@@ -4,6 +4,7 @@ import Home from './pages/Homeold';
 import Aboutus from './pages/Aboutus'; 
 import Slider from './components/Slider'; // Assuming Slider component is in components folder
 import MovieDetails from './components/MovieDetails'; // Assuming MovieDetails component is in components folder
+import "./App.css"
 
 function App() {
   return (
