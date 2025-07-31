@@ -1,7 +1,3 @@
-Certainly! Here's a comprehensive README file that combines the entire Movie Booking System project, covering both the frontend and backend, with an in-depth explanation and plenty of emojis to make it lively and engaging.
-
----
-
 # 🎥 Movie Booking System 📽️
 
 Welcome to the **Movie Booking System**! This project is a comprehensive web application that allows users to browse movies, check showtimes, and book tickets online. The system is built with a robust backend powered by Django and MongoDB, and a dynamic frontend using React.js, providing an exceptional user experience. 🎬
